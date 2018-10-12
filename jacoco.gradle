@@ -22,7 +22,7 @@ jacocoTestCoverageVerification {
             limit {
                 element = 'BUNDLE'
                 counter = "LINE"
-                minimum = 0
+                minimum = 1
             }
         }
 
