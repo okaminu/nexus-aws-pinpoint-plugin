@@ -6,6 +6,7 @@ import com.amazonaws.services.pinpoint.model.*
 import lt.boldadmin.nexus.api.SmsGateway
 
 class AwsPinpointSmsGatewayAdapter: SmsGateway {
+    //todo this needs tests
     override fun send(fromPhoneNumber: String, toPhoneNumber: String, message: String) {
         AmazonPinpointClientBuilder.standard().withRegion(Regions.US_EAST_1).build().sendMessages(
             SendMessagesRequest().withMessageRequest(
