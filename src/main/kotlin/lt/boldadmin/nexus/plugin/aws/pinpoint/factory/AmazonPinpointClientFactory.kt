@@ -4,5 +4,8 @@ import com.amazonaws.regions.Regions
 import com.amazonaws.services.pinpoint.AmazonPinpointClientBuilder
 
 class AmazonPinpointClientFactory {
-    internal fun create(regions: Regions) = AmazonPinpointClientBuilder.standard().withRegion(regions).build()
+    internal fun create(regions: Regions) = AmazonPinpointClientBuilder
+        .standard()
+        .withRegion(regions)
+        .build()
 }
