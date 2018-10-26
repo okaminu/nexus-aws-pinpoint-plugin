@@ -10,9 +10,9 @@ class AwsPinpointSmsGatewayAdapter(
     private val messagesRequestFactory: SendMessagesRequestFactory
 ): SmsGateway {
 
-    override fun send(fromPhoneNumber: String, toPhoneNumber: String, message: String) {
+    override fun send(senderPhoneNumber: String, receiverPhoneNumber: String, message: String) {
         clientFactory
             .create(Regions.US_EAST_1)
-            .sendMessages(messagesRequestFactory.create(fromPhoneNumber, toPhoneNumber, message))
+            .sendMessages(messagesRequestFactory.create(senderPhoneNumber, receiverPhoneNumber, message))
     }
 }

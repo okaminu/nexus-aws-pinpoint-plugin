@@ -7,8 +7,8 @@ import com.amazonaws.services.pinpoint.model.MessageRequest
 class MessageRequestFactory(
     private val directMessageConfigurationFactory: DirectMessageConfigurationFactory
 ) {
-    internal fun create(fromPhoneNumber: String, toPhoneNumber: String, message: String) =
+    internal fun create(senderPhoneNumber: String, receiverPhoneNumber: String, message: String) =
         MessageRequest()
-            .withAddresses(mapOf(toPhoneNumber to AddressConfiguration().withChannelType(ChannelType.SMS)))
-            .withMessageConfiguration(directMessageConfigurationFactory.create(fromPhoneNumber, message))
+            .withAddresses(mapOf(receiverPhoneNumber to AddressConfiguration().withChannelType(ChannelType.SMS)))
+            .withMessageConfiguration(directMessageConfigurationFactory.create(senderPhoneNumber, message))
 }
