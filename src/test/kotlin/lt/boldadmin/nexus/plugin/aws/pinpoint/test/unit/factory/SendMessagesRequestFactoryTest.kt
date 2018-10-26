@@ -7,15 +7,12 @@ import com.nhaarman.mockito_kotlin.mock
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.MessageRequestFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.SendMessagesRequestFactory
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
 import kotlin.test.assertEquals
 
-@RunWith(MockitoJUnitRunner::class)
 class SendMessagesRequestFactoryTest {
 
     @Test
-    fun `creates send message request`() {
+    fun `Creates send message request`() {
         val fromPhoneNumber = "fromPhoneNumber"
         val toPhoneNumber = "toPhoneNumber"
         val message = "message"
@@ -23,16 +20,14 @@ class SendMessagesRequestFactoryTest {
         val messageRequestFactoryStub: MessageRequestFactory = mock()
         val messageRequestDummy: MessageRequest = mock()
 
-        doReturn(messageRequestDummy)
-            .`when`(messageRequestFactoryStub)
-            .create(fromPhoneNumber, toPhoneNumber, message)
-
-        val actualRequest = SendMessagesRequestFactory(messageRequestFactoryStub)
-            .create(fromPhoneNumber, toPhoneNumber, message)
-
         val expectedRequest = SendMessagesRequest()
             .withMessageRequest(messageRequestDummy)
             .withApplicationId("fa31dc0f27c74def905f19179398b22e")
+
+        doReturn(messageRequestDummy).`when`(messageRequestFactoryStub).create(fromPhoneNumber, toPhoneNumber, message)
+
+        val actualRequest = SendMessagesRequestFactory(messageRequestFactoryStub)
+            .create(fromPhoneNumber, toPhoneNumber, message)
 
         assertEquals(expectedRequest, actualRequest)
     }

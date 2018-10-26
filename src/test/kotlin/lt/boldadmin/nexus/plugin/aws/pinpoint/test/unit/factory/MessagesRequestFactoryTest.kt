@@ -6,32 +6,28 @@ import com.nhaarman.mockito_kotlin.mock
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.DirectMessageConfigurationFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.MessageRequestFactory
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
 import kotlin.test.assertEquals
 
-@RunWith(MockitoJUnitRunner::class)
 class MessagesRequestFactoryTest {
 
     @Test
-    fun `creates message request`() {
+    fun `Creates message request`() {
         val fromPhoneNumber = "fromPhoneNumber"
         val toPhoneNumber = "toPhoneNumber"
         val message = "message"
 
-        val messageConfigurationFactory: DirectMessageConfigurationFactory = mock()
-        val messageConfiguration: DirectMessageConfiguration = mock()
-
-        doReturn(messageConfiguration)
-            .`when`(messageConfigurationFactory)
-            .create(fromPhoneNumber, message)
-
-        val actualConfiguration = MessageRequestFactory(messageConfigurationFactory)
-            .create(fromPhoneNumber, toPhoneNumber, message)
+        val messageConfigurationFactoryStub: DirectMessageConfigurationFactory = mock()
+        val messageConfigurationDummy: DirectMessageConfiguration = mock()
 
         val expectedConfiguration = MessageRequest()
             .withAddresses(mapOf(toPhoneNumber to AddressConfiguration().withChannelType(ChannelType.SMS)))
-            .withMessageConfiguration(messageConfiguration)
+            .withMessageConfiguration(messageConfigurationDummy)
+
+        doReturn(messageConfigurationDummy).`when`(messageConfigurationFactoryStub).create(fromPhoneNumber, message)
+
+        val actualConfiguration = MessageRequestFactory(messageConfigurationFactoryStub)
+            .create(fromPhoneNumber, toPhoneNumber, message)
+
 
         assertEquals(expectedConfiguration, actualConfiguration)
     }
