@@ -8,5 +8,5 @@ class SendMessagesRequestFactory(
     internal fun create(senderPhoneNumber: String, receiverPhoneNumber: String, message: String) =
         SendMessagesRequest()
             .withMessageRequest(messageRequestFactory.create(senderPhoneNumber, receiverPhoneNumber, message))
-            .withApplicationId("fa31dc0f27c74def905f19179398b22e")
+            .withApplicationId(System.getenv("AWS_PINPOINT_APP_ID"))
 }

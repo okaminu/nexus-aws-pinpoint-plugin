@@ -22,7 +22,7 @@ class SendMessagesRequestFactoryTest {
 
         val expectedRequest = SendMessagesRequest()
             .withMessageRequest(messageRequestDummy)
-            .withApplicationId("fa31dc0f27c74def905f19179398b22e")
+            .withApplicationId(System.getenv("AWS_PINPOINT_APP_ID"))
 
         doReturn(messageRequestDummy).`when`(messageRequestFactoryStub).create(fromPhoneNumber, toPhoneNumber, message)
 
