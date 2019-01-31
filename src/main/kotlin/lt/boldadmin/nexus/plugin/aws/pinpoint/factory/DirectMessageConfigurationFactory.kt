@@ -4,7 +4,7 @@ import com.amazonaws.services.pinpoint.model.DirectMessageConfiguration
 import com.amazonaws.services.pinpoint.model.MessageType
 import com.amazonaws.services.pinpoint.model.SMSMessage
 
-class DirectMessageConfigurationFactory {
+object DirectMessageConfigurationFactory {
     internal fun create(senderPhoneNumber: String, message: String) =
         DirectMessageConfiguration().withSMSMessage(
             SMSMessage()
