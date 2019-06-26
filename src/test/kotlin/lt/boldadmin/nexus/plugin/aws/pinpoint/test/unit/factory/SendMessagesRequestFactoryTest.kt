@@ -2,8 +2,8 @@ package lt.boldadmin.nexus.plugin.aws.pinpoint.test.unit.factory
 
 import com.amazonaws.services.pinpoint.model.MessageRequest
 import com.amazonaws.services.pinpoint.model.SendMessagesRequest
-import com.nhaarman.mockito_kotlin.doReturn
-import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockitokotlin2.doReturn
+import com.nhaarman.mockitokotlin2.mock
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.MessageRequestFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.SendMessagesRequestFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.provider.AwsPinpointAppIdProvider

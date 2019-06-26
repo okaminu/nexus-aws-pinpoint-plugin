@@ -3,9 +3,9 @@ package lt.boldadmin.nexus.plugin.aws.pinpoint.test.unit
 import com.amazonaws.regions.Regions
 import com.amazonaws.services.pinpoint.AmazonPinpoint
 import com.amazonaws.services.pinpoint.model.SendMessagesRequest
-import com.nhaarman.mockito_kotlin.doReturn
-import com.nhaarman.mockito_kotlin.mock
-import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockitokotlin2.doReturn
+import com.nhaarman.mockitokotlin2.mock
+import com.nhaarman.mockitokotlin2.verify
 import lt.boldadmin.nexus.plugin.aws.pinpoint.AwsPinpointSmsGatewayAdapter
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.AmazonPinpointClientFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.SendMessagesRequestFactory
