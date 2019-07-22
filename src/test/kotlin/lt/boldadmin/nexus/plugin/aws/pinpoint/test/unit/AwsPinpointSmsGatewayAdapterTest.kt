@@ -22,10 +22,11 @@ class AwsPinpointSmsGatewayAdapterTest {
         val clientFactoryStub: AmazonPinpointClientFactory = mock()
         val messagesRequestFactoryStub: SendMessagesRequestFactory = mock()
         val messagesRequestDummy: SendMessagesRequest = mock()
-        val amazonPinpointSpy: AmazonPinpoint= mock()
+        val amazonPinpointSpy: AmazonPinpoint = mock()
 
         doReturn(amazonPinpointSpy).`when`(clientFactoryStub).create(Regions.US_EAST_1)
-        doReturn(messagesRequestDummy).`when`(messagesRequestFactoryStub).create(fromPhoneNumber, toPhoneNumber, message)
+        doReturn(messagesRequestDummy)
+            .`when`(messagesRequestFactoryStub).create(fromPhoneNumber, toPhoneNumber, message)
 
         AwsPinpointSmsGatewayAdapter(clientFactoryStub, messagesRequestFactoryStub)
             .send(fromPhoneNumber, toPhoneNumber, message)
