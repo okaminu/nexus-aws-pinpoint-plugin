@@ -9,7 +9,7 @@ import com.nhaarman.mockitokotlin2.verify
 import lt.boldadmin.nexus.plugin.aws.pinpoint.AwsPinpointSmsGatewayAdapter
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.AmazonPinpointClientFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.SendMessagesRequestFactory
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class AwsPinpointSmsGatewayAdapterTest {
 

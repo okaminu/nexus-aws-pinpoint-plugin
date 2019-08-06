@@ -4,8 +4,8 @@ import com.amazonaws.services.pinpoint.model.DirectMessageConfiguration
 import com.amazonaws.services.pinpoint.model.MessageType
 import com.amazonaws.services.pinpoint.model.SMSMessage
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.DirectMessageConfigurationFactory
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class DirectMessageConfigurationFactoryTest {
 

@@ -7,8 +7,8 @@ import com.nhaarman.mockitokotlin2.mock
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.MessageRequestFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.SendMessagesRequestFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.provider.AwsPinpointAppIdProvider
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class SendMessagesRequestFactoryTest {
 
