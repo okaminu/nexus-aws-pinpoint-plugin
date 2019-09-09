@@ -22,7 +22,6 @@ class DirectMessageConfigurationFactoryTest {
 
         val actualConfiguration = DirectMessageConfigurationFactory.create(fromPhoneNumber, message)
 
-
         assertEquals(expectedConfiguration, actualConfiguration)
     }
 }
