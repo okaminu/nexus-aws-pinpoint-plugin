@@ -25,6 +25,7 @@ class MessagesRequestFactoryTest {
 
         doReturn(messageConfigurationDummy).`when`(messageConfigurationFactoryStub).create(fromPhoneNumber, message)
 
+
         val actualConfiguration = MessageRequestFactory(messageConfigurationFactoryStub)
             .create(fromPhoneNumber, toPhoneNumber, message)
 
