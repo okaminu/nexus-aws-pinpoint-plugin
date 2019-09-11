@@ -2,7 +2,7 @@ apply from: 'aws-credentials.gradle'
 
 repositories {
     mavenLocal()
-    mavenCentral()
+    jcenter()
     repositories {
         maven {
             url 's3://repository.boldadmin.com/snapshots'
