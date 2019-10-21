@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.plugin.aws.pinpoint
 
 import com.amazonaws.regions.Regions
-import lt.boldadmin.nexus.api.SmsGateway
+import lt.boldadmin.nexus.api.gateway.SmsGateway
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.AmazonPinpointClientFactory
 import lt.boldadmin.nexus.plugin.aws.pinpoint.factory.SendMessagesRequestFactory
 
