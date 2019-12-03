@@ -27,7 +27,6 @@ detekt {
     toolVersion = "$detekt_version"
     config = files("$rootDir/detekt/config.yml")
     input = files("src/main/kotlin", "src/test/kotlin")
-    baseline = file("$rootDir/detekt/detekt-baseline.xml")
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {

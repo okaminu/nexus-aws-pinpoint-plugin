@@ -15,20 +15,15 @@ class MessagesRequestFactoryTest {
         val fromPhoneNumber = "fromPhoneNumber"
         val toPhoneNumber = "toPhoneNumber"
         val message = "message"
-
         val messageConfigurationFactoryStub: DirectMessageConfigurationFactory = mock()
         val messageConfigurationDummy: DirectMessageConfiguration = mock()
-
         val expectedConfiguration = MessageRequest()
             .withAddresses(mapOf(toPhoneNumber to AddressConfiguration().withChannelType(ChannelType.SMS)))
             .withMessageConfiguration(messageConfigurationDummy)
-
         doReturn(messageConfigurationDummy).`when`(messageConfigurationFactoryStub).create(fromPhoneNumber, message)
 
-
-        val actualConfiguration = MessageRequestFactory(messageConfigurationFactoryStub)
-            .create(fromPhoneNumber, toPhoneNumber, message)
-
+        val actualConfiguration =
+            MessageRequestFactory(messageConfigurationFactoryStub).create(fromPhoneNumber, toPhoneNumber, message)
 
         assertEquals(expectedConfiguration, actualConfiguration)
     }
